@@ -36,7 +36,7 @@
         //click enter
         if(e.keyCode === 13){
             val = document.getElementById("guess").value;
-            log = log + " <br>" + val;
+            log = val + "<br>" + log;
             console.log(log);
             document.getElementById("guess").value = "";  //reset text box
             document.getElementById("val").innerHTML = log;
