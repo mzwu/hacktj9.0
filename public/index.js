@@ -21,7 +21,13 @@ console.log(__dirname);
 app.use(express.static(path.join(__dirname, 'static')));
 
 const fs = require('fs');
-var all_words = fs.readFileSync(path.join('data','words_alpha.txt')).toString().split('\r\n')
+const whole_string = fs.readFileSync(path.join('data','words_alpha.txt')).toString();
+var all_words = '';
+if (whole_string.includes('\r\n'))
+    all_words = whole_string.split('\r\n');
+else
+    all_words = whole_string.split('\n');
+console.log(all_words);
 
 var answer = "";
 
