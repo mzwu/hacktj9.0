@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/materialize.css">
+{{!-- 	<link rel="icon" href="https://img.icons8.com/material-outlined/24/000000/home--v2.png"> --}}
+	<title>Visuale</title>
+    <style>
+        input[type="text"]::placeholder {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+<h1 class="center-align">Visuale</h1>
+
+<div class="row container center-align">
+    <div class="col s8 offset-s2">
+        <h6>Instructions: Guess the object in the image! After each guess, the picture will zoom out to give you more hints. Press enter to submit each guess.</h6>
+    </div>
+    <div class="col s4 offset-s4">
+        <input type="text" id="guess" placeholder="Enter Guess" onkeypress="enter(event)" size="25"><br>
+    </div>
+</div>
+
+</body>
+</html>

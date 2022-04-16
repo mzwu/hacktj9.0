@@ -1,0 +1,42 @@
+/*
+Custom stylesheet
+Override Materialize template
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+p, a, li {
+    font-size: 18px;
+}
+
+a {
+    color: #c78bb1;
+}
+
+a:hover {
+    color: #b07b9d;
+    text-decoration: underline;
+}
+
+ul.browser-default li {
+  list-style-type: circle;
+  list-style-position: inside;
+}
+
+.header {
+    font-family: 'Rufina', serif;
+}
+
+.no-break {
+    display: inline;
+}
+
+.tight {
+    line-height: 50%;
+}
