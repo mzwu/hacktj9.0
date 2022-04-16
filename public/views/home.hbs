@@ -2,7 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/materialize.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 {{!-- 	<link rel="icon" href="https://img.icons8.com/material-outlined/24/000000/home--v2.png"> --}}
 	<title>Visuale</title>
     <style>
@@ -36,7 +36,7 @@
         //click enter
         if(e.keyCode === 13){
             val = document.getElementById("guess").value;
-            log = log + " " + val;
+            log = log + " <br>" + val;
             console.log(log);
             document.getElementById("guess").value = "";  //reset text box
             document.getElementById("val").innerHTML = log;

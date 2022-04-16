@@ -41,6 +41,8 @@ ul.browser-default li {
     line-height: 50%;
 }
 
+
+
 .imgBox { /* now a container for the image */
     display: inline-block; /* shrink wrap to image */
     overflow: hidden; /* hide the excess */
