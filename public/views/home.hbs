@@ -32,19 +32,31 @@
         //click enter
         if(e.keyCode === 13){
             val = document.getElementById("guess").value;
-	    
-	    //verify it's a real word
-	    var all_words = fs.readFileSync(path.join('/site','public','data','words_alpha.txt')).toString().split('\n');
-	    if(!all_words.includes(val)){
-	    	//error
-	    	document.getElementById("guess").innerHTML = 'this word does not exist';
-	    }
-	    
             log = log + " " + val;
             console.log(log);
             document.getElementById("guess").value = "";  //reset text box
             document.getElementById("val").innerHTML = log;
+	    check(val)
         }
+    }
+    
+    function check(value){
+        
+        var ajax_params = {
+            'url'     : "https://user.tjhsst.edu/2022cchen/check?word=" + value,
+            'type'    : "get",
+            'success' : result //callback function
+        }
+        
+        // run AJAX function 
+        $.ajax( ajax_params )
+    }
+    
+    function result(response) {
+    	if(response.real == Boolean(false)) {
+    	    console.log('false')
+    	    document.getElementById("val").innerHTML = 'error'
+    	}
     }
 
 </script>
