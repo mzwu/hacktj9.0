@@ -24,6 +24,25 @@ app.get('/', function(req, res){
     res.render('home');
 });
 
+app.get('/check', function(req, res){
+    var word = req.query.word
+    var real;
+    
+    console.log(word)
+    
+    if(all_words.includes(word)){
+        real = Boolean(true);
+    } else {
+        real = Boolean(false);
+    }
+    
+    console.log(real)
+    var params = {
+        'real' : real
+    }
+    res.json(params)
+});
+
 // listener - keeps node 'alive.'
 var listener = app.listen(process.env.PORT || 8080, process.env.HOST || "0.0.0.0", function() {
     console.log("Express server started");
