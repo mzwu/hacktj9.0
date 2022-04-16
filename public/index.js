@@ -27,7 +27,7 @@ if (whole_string.includes('\r\n'))
     all_words = whole_string.split('\r\n');
 else
     all_words = whole_string.split('\n');
-console.log(all_words);
+//console.log(all_words);
 
 var answer = "";
 
