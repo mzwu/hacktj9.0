@@ -23,8 +23,15 @@ app.use(express.static(path.join(__dirname, 'static')));
 const fs = require('fs');
 var all_words = fs.readFileSync(path.join('data','words_alpha.txt')).toString().split('\r\n')
 
+var answer = "";
+
 app.get('/', function(req, res){
-    res.render('home');
+    var files = fs.readdirSync('static/img/');
+    idx = Math.floor((Math.random() * files.length-1));
+    filename = files[idx];
+    answer = filename.split('.')[0];
+    params = {'answer' : answer}
+    res.render('home', params);
 });
 
 app.get('/check', function(req, res){
@@ -41,7 +48,9 @@ app.get('/check', function(req, res){
     
     console.log(real)
     var params = {
-        'real' : real
+        'real' : real,
+        'word' : word,
+        'answer' : answer
     }
     res.json(params)
 });

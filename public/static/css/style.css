@@ -78,3 +78,7 @@ ul.browser-default li {
     display: block; /* no whitespace */
     transform: scale(1.4);
 }
+.imgBox img.zoom7 {
+    display: block; /* no whitespace */
+    transform: scale(1);
+}

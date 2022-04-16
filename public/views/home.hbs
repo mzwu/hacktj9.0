@@ -20,12 +20,12 @@
         <h6>You have 6 guesses to guess the object in the image! After each guess, the picture will zoom out to give you more hints. Press enter to submit each guess.</h6>
     </div>
     <div class="imgBox "> {{!--col s6 offset-s4--}}
-        <img src="img/backpack.jpeg" class="zoom1" alt="backpack" width="300px" height="300px" id="image">
+        <img src="img/{{answer}}.jpeg" class="zoom1" alt="backpack" width="300px" height="300px" id="image">
     </div>
     <div class="col s4 offset-s4">
         <input type="text" id="guess" placeholder="Enter Guess" onkeypress="enter(event)" size="25"><br>
     </div>
-    <div class="col s6 offset-s3">
+    <div class="col s8 offset-s2">
         <p id="message"></p>
         <p id="val"></p>
     </div>
@@ -45,9 +45,6 @@
             console.log(log);
             document.getElementById("guess").value = "";  //reset text box
             document.getElementById("val").innerHTML = log;
-            count += 1;
-            new_class = "zoom" + count;
-            document.getElementById("image").className = new_class;
         }
     }
     
@@ -67,6 +64,20 @@
     	if(response.real == Boolean(false)) {
     	    console.log('false')
     	    document.getElementById("message").innerHTML = 'error! not a valid word'
+    	}
+    	else if(response.word == response.answer) {
+    	    console.log('correct')
+    	    document.getElementById("message").innerHTML = 'congratulations! you found the word in ' + count + " tries"
+            count = 7;
+            new_class = "zoom" + count;
+            document.getElementById("image").className = new_class;
+    	}
+    	else {
+    	    console.log('incorrect')
+    	    document.getElementById("message").innerHTML = 'sorry, this is incorrect'
+            count += 1;
+            new_class = "zoom" + count;
+            document.getElementById("image").className = new_class;
     	}
     }
 
