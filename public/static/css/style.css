@@ -44,8 +44,11 @@ ul.browser-default li {
 
 
 .imgBox { /* now a container for the image */
+    width:300px;
+    height:300px;
     display: inline-block; /* shrink wrap to image */
     overflow: hidden; /* hide the excess */
+    margin: 20px;
 }
 .imgBox img.zoom1 {
     display: block; /* no whitespace */
