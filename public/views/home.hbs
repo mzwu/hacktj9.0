@@ -19,7 +19,7 @@
     <div class="col s8 offset-s2">
         <h6>You have 6 guesses to guess the object in the image! After each guess, the picture will zoom out to give you more hints. Press enter to submit each guess.</h6>
     </div>
-    <div class="imgBox "> {{!--col s6 offset-s4--}}
+    <div class="imgBox col s4 offset-s4">
         <img src="img/{{answer}}.jpeg" class="zoom1" alt="backpack" width="300px" height="300px" id="image">
     </div>
     <div class="col s4 offset-s4">
@@ -41,10 +41,7 @@
         if(e.keyCode === 13){
             val = document.getElementById("guess").value.toLowerCase();
             check(val);
-            log = val + "<br>" + log;
-            console.log(log);
             document.getElementById("guess").value = "";  //reset text box
-            document.getElementById("val").innerHTML = log;
         }
     }
     
@@ -68,6 +65,9 @@
     	}
     	else if(response.word == response.answer) {
     	    console.log('correct')
+            log = val + "<br>" + log;
+            console.log(log);
+            document.getElementById("val").innerHTML = log;
     	    document.getElementById("message").innerHTML = 'congratulations! you found the word in ' + count + " tries"
             document.getElementById("message").style.color = "#4a915e"
             count = 7;
@@ -76,6 +76,9 @@
     	}
     	else {
     	    console.log('incorrect')
+            log = val + "<br>" + log;
+            console.log(log);
+            document.getElementById("val").innerHTML = log;
     	    document.getElementById("message").innerHTML = 'sorry, this is incorrect'
     	    document.getElementById("message").style.color = "#c27c30"
             count += 1;
