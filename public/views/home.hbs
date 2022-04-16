@@ -37,7 +37,7 @@
 	    var all_words = fs.readFileSync(path.join('/site','public','data','words_alpha.txt')).toString().split('\n');
 	    if(!all_words.includes(val)){
 	    	//error
-	    	document.getElementById("guess").value = 'this word does not exist';
+	    	document.getElementById("guess").innerHTML = 'this word does not exist';
 	    }
 	    
             log = log + " " + val;
