@@ -64,10 +64,12 @@
     	if(response.real == Boolean(false)) {
     	    console.log('false')
     	    document.getElementById("message").innerHTML = 'error! not a valid word'
+    	    document.getElementById("message").style.color = "#c23030"
     	}
     	else if(response.word == response.answer) {
     	    console.log('correct')
     	    document.getElementById("message").innerHTML = 'congratulations! you found the word in ' + count + " tries"
+            document.getElementById("message").style.color = "#4a915e"
             count = 7;
             new_class = "zoom" + count;
             document.getElementById("image").className = new_class;
@@ -75,6 +77,7 @@
     	else {
     	    console.log('incorrect')
     	    document.getElementById("message").innerHTML = 'sorry, this is incorrect'
+    	    document.getElementById("message").style.color = "#c27c30"
             count += 1;
             new_class = "zoom" + count;
             document.getElementById("image").className = new_class;

@@ -28,6 +28,8 @@ var answer = "";
 app.get('/', function(req, res){
     var files = fs.readdirSync('static/img/');
     idx = Math.floor((Math.random() * files.length-1));
+    console.log(files);
+    console.log(idx);
     filename = files[idx];
     answer = filename.split('.')[0];
     params = {'answer' : answer}
