@@ -40,3 +40,36 @@ ul.browser-default li {
 .tight {
     line-height: 50%;
 }
+
+.imgBox { /* now a container for the image */
+    display: inline-block; /* shrink wrap to image */
+    overflow: hidden; /* hide the excess */
+}
+.imgBox img.zoom1 {
+    display: block; /* no whitespace */
+    transform: scale(20);
+}
+.imgBox img.zoom2 {
+    display: block; /* no whitespace */
+    transform: scale(18);
+}
+.imgBox img.zoom3 {
+    display: block; /* no whitespace */
+    transform: scale(15);
+}
+.imgBox img.zoom3 {
+    display: block; /* no whitespace */
+    transform: scale(10);
+}
+.imgBox img.zoom4 {
+    display: block; /* no whitespace */
+    transform: scale(5);
+}
+.imgBox img.zoom5 {
+    display: block; /* no whitespace */
+    transform: scale(2);
+}
+.imgBox img.zoom6 {
+    display: block; /* no whitespace */
+    transform: scale(1.2);
+}
