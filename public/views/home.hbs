@@ -5,7 +5,7 @@
 {{!-- 	<link rel="icon" href="https://img.icons8.com/material-outlined/24/000000/home--v2.png"> --}}
 	<title>Visuale</title>
     <style>
-        input[type="text"]::placeholder {
+        input {
             text-align: center;
         }
     </style>
@@ -21,7 +21,25 @@
     <div class="col s4 offset-s4">
         <input type="text" id="guess" placeholder="Enter Guess" onkeypress="enter(event)" size="25"><br>
     </div>
+    <div class="col s6 offset-s3">
+        <p id="val"></p>
+    </div>
 </div>
+
+<script type="text/javascript">
+    var log = "";
+    function enter(e){
+        //click enter
+        if(e.keyCode === 13){
+            val = document.getElementById("guess").value;
+            log = log + " " + val;
+            console.log(log);
+            document.getElementById("guess").value = "";  //reset text box
+            document.getElementById("val").innerHTML = log;
+        }
+    }
+
+</script>
 
 </body>
 </html>
