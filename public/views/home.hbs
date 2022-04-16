@@ -40,7 +40,27 @@
             console.log(log);
             document.getElementById("guess").value = "";  //reset text box
             document.getElementById("val").innerHTML = log;
+	    check(val)
         }
+    }
+    
+    function check(value){
+        
+        var ajax_params = {
+            'url'     : "https://user.tjhsst.edu/2022cchen/check?word=" + value,
+            'type'    : "get",
+            'success' : result //callback function
+        }
+        
+        // run AJAX function 
+        $.ajax( ajax_params )
+    }
+    
+    function result(response) {
+    	if(response.real == Boolean(false)) {
+    	    console.log('false')
+    	    document.getElementById("val").innerHTML = 'error'
+    	}
     }
 
 </script>
