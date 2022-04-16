@@ -26,6 +26,7 @@
         <input type="text" id="guess" placeholder="Enter Guess" onkeypress="enter(event)" size="25"><br>
     </div>
     <div class="col s6 offset-s3">
+        <p id="message"></p>
         <p id="val"></p>
     </div>
 </div>
@@ -33,19 +34,20 @@
 
 <script type="text/javascript">
     var log = "";
+    document.getElementById("image").class = "zoom1";
     var count = 1;
     function enter(e){
         //click enter
         if(e.keyCode === 13){
-            val = document.getElementById("guess").value;
+            val = document.getElementById("guess").value.toLowerCase();
+            check(val);
             log = val + "<br>" + log;
             console.log(log);
             document.getElementById("guess").value = "";  //reset text box
             document.getElementById("val").innerHTML = log;
             count += 1;
             new_class = "zoom" + count;
-            document.getElementById("image").class = new_class;
-	    check(val)
+            document.getElementById("image").className = new_class;
         }
     }
     
@@ -64,7 +66,7 @@
     function result(response) {
     	if(response.real == Boolean(false)) {
     	    console.log('false')
-    	    document.getElementById("val").innerHTML = 'error'
+    	    document.getElementById("message").innerHTML = 'error! not a valid word'
     	}
     }
 

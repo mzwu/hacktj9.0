@@ -21,7 +21,7 @@ console.log(__dirname);
 app.use(express.static(path.join(__dirname, 'static')));
 
 const fs = require('fs');
-var all_words = fs.readFileSync(path.join('data','words_alpha.txt')).toString().split('\n')
+var all_words = fs.readFileSync(path.join('data','words_alpha.txt')).toString().split('\n\r')
 
 app.get('/', function(req, res){
     res.render('home');
@@ -30,7 +30,7 @@ app.get('/', function(req, res){
 app.get('/check', function(req, res){
     var word = req.query.word
     var real;
-    
+
     console.log(word)
     
     if(all_words.includes(word)){
