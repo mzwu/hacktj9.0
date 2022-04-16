@@ -20,7 +20,8 @@ var path = require('path');
 console.log(__dirname);
 app.use(express.static(path.join(__dirname, 'static')));
 
-var all_words = fs.readFileSync(path.join('/site','public','data','words_alpha.txt')).toString().split('\n')
+const fs = require('fs');
+var all_words = fs.readFileSync(path.join('data','words_alpha.txt')).toString().split('\n')
 
 app.get('/', function(req, res){
     res.render('home');
