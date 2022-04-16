@@ -32,6 +32,14 @@
         //click enter
         if(e.keyCode === 13){
             val = document.getElementById("guess").value;
+	    
+	    //verify it's a real word
+	    var all_words = fs.readFileSync(path.join('/site','public','data','words_alpha.txt')).toString().split('\n');
+	    if(!all_words.includes(val)){
+	    	//error
+	    	document.getElementById("guess").value = 'this word does not exist';
+	    }
+	    
             log = log + " " + val;
             console.log(log);
             document.getElementById("guess").value = "";  //reset text box
